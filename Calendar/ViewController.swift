@@ -63,19 +63,22 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         //1日〜月末まで表示し、余ったCellは空白にする
         if (indexPath.row + weekdayAdding) >= 1 && (indexPath.row + weekdayAdding) <= daysCountInMonth! {
 
-
-            cell.backgroundColor = #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)
             let label = UILabel()
             label.font = UIFont(name: "Arial", size: 17)
             label.text = "\(indexPath.row + weekdayAdding)"
-let today = "3"
 
-            if label.text == today {
-                cell.backgroundColor = #colorLiteral(red: 0.521568656, green: 0.1098039225, blue: 0.05098039284, alpha: 1)
+            let date = Date()
+            let f = DateFormatter()
+            f.dateStyle = .long
+            f.locale = Locale(identifier: "ja_JP")
+            let today = f.string(from: date)
+            let today_1 = dateLabel.text! + label.text! + "日"
 
+            if today_1 != today {
+                cell.backgroundColor = #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)
+            } else {
+                cell.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
             }
-            
-print(label.text)
 
             label.sizeToFit()
             label.center = cell.contentView.center
@@ -148,12 +151,6 @@ print(label.text)
     @IBAction func backFromPlaninputView(segue:UIStoryboardSegue){
         NSLog("PlaninputViewController#backFromPlaninputView")
     }
-    
-//    @IBAction func backFromSchedule(segue:UIStoryboardSegue){
-//        NSLog("ViewController#backFromSchedule")
-//    }
-//
-
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

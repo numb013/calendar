@@ -20,6 +20,7 @@
 		CE0205262148C91B00D45E45 /* OriginalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0205252148C91B00D45E45 /* OriginalViewController.swift */; };
 		CE0205282149713B00D45E45 /* RepeatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0205272149713B00D45E45 /* RepeatViewController.swift */; };
 		CE02052A214972B900D45E45 /* OriginalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE020529214972B900D45E45 /* OriginalDetailViewController.swift */; };
+		CE24DDD6214CFB26006812ED /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE24DDD5214CFB26006812ED /* SettingViewController.swift */; };
 		CE8D3BD82141AFA20025F047 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D3BD72141AFA20025F047 /* AppDelegate.swift */; };
 		CE8D3BDA2141AFA20025F047 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D3BD92141AFA20025F047 /* ViewController.swift */; };
 		CE8D3BDD2141AFA20025F047 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE8D3BDB2141AFA20025F047 /* Main.storyboard */; };
@@ -61,6 +62,7 @@
 		CE0205252148C91B00D45E45 /* OriginalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OriginalViewController.swift; sourceTree = "<group>"; };
 		CE0205272149713B00D45E45 /* RepeatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatViewController.swift; sourceTree = "<group>"; };
 		CE020529214972B900D45E45 /* OriginalDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OriginalDetailViewController.swift; sourceTree = "<group>"; };
+		CE24DDD5214CFB26006812ED /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		CE8D3BD42141AFA20025F047 /* Calendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE8D3BD72141AFA20025F047 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE8D3BD92141AFA20025F047 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				CE8D3C052141BAB80025F047 /* PlanInputViewController.swift */,
 				CE0205252148C91B00D45E45 /* OriginalViewController.swift */,
 				CE020529214972B900D45E45 /* OriginalDetailViewController.swift */,
+				CE24DDD5214CFB26006812ED /* SettingViewController.swift */,
 				CE0205272149713B00D45E45 /* RepeatViewController.swift */,
 				CE8D3BD92141AFA20025F047 /* ViewController.swift */,
 				CE8D3BDB2141AFA20025F047 /* Main.storyboard */,
@@ -314,6 +317,7 @@
 				CE0205112146BA2F00D45E45 /* DatePickerTableViewCell.swift in Sources */,
 				CE0205262148C91B00D45E45 /* OriginalViewController.swift in Sources */,
 				CE0205192146BBD400D45E45 /* SelectTableViewCell.swift in Sources */,
+				CE24DDD6214CFB26006812ED /* SettingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

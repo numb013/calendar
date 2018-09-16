@@ -13,9 +13,9 @@ class PlanInputViewController: UIViewController, UITableViewDelegate, UITableVie
     var text = ""
 
     @IBOutlet weak var datePicker: UIDatePicker!
-
     @IBOutlet weak var datePickerBottomMargin: NSLayoutConstraint!
     
+
     var selectCellPath:IndexPath?
 
     @IBOutlet weak var tableview: UITableView!
@@ -37,16 +37,6 @@ class PlanInputViewController: UIViewController, UITableViewDelegate, UITableVie
 
         self.tableview.register(UINib(nibName: "MemoTableViewCell", bundle: nil), forCellReuseIdentifier: "MemoTableViewCell")
 
-        
-        
-        
-//        print(text)
-//        let label = UILabel()
-//        label.text = text
-//        label.font = UIFont(name: "Arial", size: 17)
-//        label.center = self.view.center
-//        label.sizeToFit()
-//        self.view.addSubview(label)
     }
 
     
@@ -74,11 +64,8 @@ class PlanInputViewController: UIViewController, UITableViewDelegate, UITableVie
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
         var cell = UITableViewCell()
 
-        
-        
         if indexPath.section == 0 {
             if indexPath.row == 0 {
                 cell = tableview.dequeueReusableCell(withIdentifier: "TextFieldTableViewCell") as! TextFieldTableViewCell
@@ -94,7 +81,11 @@ class PlanInputViewController: UIViewController, UITableViewDelegate, UITableVie
         if indexPath.section == 1 {
             if indexPath.row == 0 {
                 cell = tableView.dequeueReusableCell(withIdentifier: "DatePickerTableViewCell") as! DatePickerTableViewCell
-                cell.textLabel?.text = text
+
+
+                  // ここがうまくいかない所
+//                cell.startLabel?.text = "開始"
+//                cell.startDateLabel.text = text
             }
         }
 
@@ -157,108 +148,75 @@ class PlanInputViewController: UIViewController, UITableViewDelegate, UITableVie
         return 50
     }
 
-    
-    
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        // DatePickerを表示させる
-//        if indexPath.section == 1{
-//            if indexPath.row == 0{
-//                selectCellPath = indexPath
-//                showDatePicker()
-//            } else {
-//                dismissDatePicker()
-//            }
-//        }
-//    }
-//
-//
-//    func showDatePicker(){
-//        UIView.animate(withDuration: 0.5,animations: {
-//            self.datePickerBottomMargin.constant = 0
-//            self.datePicker.updateConstraints()
-//            self.tableview.updateConstraints()
-//            self.view.layoutIfNeeded()
-//        })
-//    }
-//
-//    func dismissDatePicker(){
-//        UIView.animate(withDuration: 0.5,animations: {
-//            self.datePickerBottomMargin.constant = 250
-//            self.datePicker.updateConstraints()
-//            self.tableview.updateConstraints()
-//            self.view.layoutIfNeeded()
-//        })
-//    }
-    
-
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("セッション")
         print(indexPath.section)
         print("ロウ")
         print(indexPath.row)
 
-        if indexPath.section == 2 {
+        // datePikcer
+        if indexPath.section == 1 {
             if indexPath.row == 0 {
-                self.performSegue(withIdentifier: "toOriginal", sender: nil)
+                print(indexPath)
+//                selectCellPath = indexPath
+//                showDatePicker()
             }
         }
-
+        // オリジナル設定
+        if indexPath.section == 2 {
+            if indexPath.row == 0 {
+                let setteing_status = "0"
+                self.performSegue(withIdentifier: "toSetting", sender: setteing_status)
+            }
+        }
+        // 繰り返し
         if indexPath.section == 2 {
             if indexPath.row == 1 {
-
-
+                let setteing_status = "1"
+                self.performSegue(withIdentifier: "toSetting", sender: setteing_status)
             }
         }
-
+        // 通知
         if indexPath.section == 3 {
             if indexPath.row == 0 {
-
+                let setteing_status = "2"
+                self.performSegue(withIdentifier: "toSetting", sender: setteing_status)
             }
         }
-
+        // カレンダー
         if indexPath.section == 4 {
             if indexPath.row == 0 {
-
+                let setteing_status = "3"
+                self.performSegue(withIdentifier: "toSetting", sender: setteing_status)
             }
         }
-
+        // カラー
         if indexPath.section == 5 {
             if indexPath.row == 0 {
-
+                let setteing_status = "4"
+                let nextodv = OriginalDetailViewController()
+                nextodv.view.backgroundColor = UIColor.blue
+                self.present(nextodv, animated: true, completion: nil)
+//                self.performSegue(withIdentifier: "toSetting", sender: setteing_status)
             }
         }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toOriginal" {
-            let vc = segue.destination as! OriginalViewController
-            vc.text = "aaaaa"
+        if segue.identifier == "toSetting" {
+            let vc = segue.destination as! SettingViewController
+            vc.setteing_status = sender as! String
         }
 
-        if segue.identifier == "" {
-        }
     }
 
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        // 選択された数字を取得
-//
-//
-//        print(IndexPath())
-//
-//        self.performSegue(withIdentifier: "toOriginal", sender: nil)
-//    }
-    
-    
-
-    @IBAction func backFromOriginalView(segue:UIStoryboardSegue){
-        NSLog("OriginalViewController#backFromOriginalView")
+    @IBAction func backFromSettingView(segue:UIStoryboardSegue){
+        NSLog("SettingViewController#backFromSettingView")
     }
     
     
     @IBAction func input(_ sender: Any) {
     }
-    
     
     
     override func didReceiveMemoryWarning() {

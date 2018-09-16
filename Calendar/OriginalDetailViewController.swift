@@ -17,9 +17,6 @@ class OriginalDetailViewController: UIViewController, UITableViewDataSource, UIT
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tableview.dataSource = self
-        tableview.delegate = self
-
         // Do any additional setup after loading the view.
     }
 

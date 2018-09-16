@@ -52,7 +52,7 @@ print(text)
         return cell
     }
 
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("セッション")
         print(indexPath.section)
         print("ロウ")
